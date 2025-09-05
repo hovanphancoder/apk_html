@@ -1,0 +1,23 @@
+{
+    "name": "apk-html",
+    "version": "1.0.0",
+    "description": "APKMody - Download Mod APK Games & Apps for Android",
+    "main": "index.html",
+    "scripts": {
+        "build": "echo 'Static site - no build required'",
+        "dev": "npx serve .",
+        "start": "npx serve ."
+    },
+    "keywords": [
+        "apk",
+        "android",
+        "mod",
+        "games",
+        "apps"
+    ],
+    "author": "hovanphancoders",
+    "license": "MIT",
+    "devDependencies": {
+        "serve": "^14.2.1"
+    }
+}
