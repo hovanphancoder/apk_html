@@ -2830,7 +2830,9 @@ footer p {
     margin-top: 50px
 }
 
-[type=button],[type=submit],button {
+[type=button],
+[type=submit],
+button {
     border: none;
     -webkit-appearance: button;
     background: transparent

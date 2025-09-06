@@ -817,6 +817,7 @@ Utility CSS
     overflow: hidden;
     transform: translate3d(0, 0, 0);
     background: transparent;
+    padding: 0;
 }
 
 .clickable:hover {
@@ -2989,7 +2990,9 @@ footer p {
 }
 
 /* Button reset styles */
-[type=button], [type=submit], button {
+[type=button],
+[type=submit],
+button {
     border: none;
     -webkit-appearance: button;
     background: transparent;
