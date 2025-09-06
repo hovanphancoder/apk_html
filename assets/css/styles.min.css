@@ -2829,3 +2829,9 @@ footer p {
 .top-nav__end {
     margin-top: 50px
 }
+
+[type=button],[type=submit],button {
+    border: none;
+    -webkit-appearance: button;
+    background: transparent
+}

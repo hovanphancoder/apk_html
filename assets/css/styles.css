@@ -2987,3 +2987,10 @@ footer p {
 .top-nav__end {
     margin-top: 50px;
 }
+
+/* Button reset styles */
+[type=button], [type=submit], button {
+    border: none;
+    -webkit-appearance: button;
+    background: transparent;
+}
