@@ -915,7 +915,7 @@ function initializeHeroSlider() {
 function initTopNavToggle() {
     // Scroll effect disabled - only show download button
     const downloadButton = document.getElementById('top-download-button');
-    
+
     if (downloadButton) {
         downloadButton.classList.add('top-nav__button_visible');
     }
