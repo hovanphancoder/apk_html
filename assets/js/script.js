@@ -911,67 +911,20 @@ function initializeHeroSlider() {
     }
 }
 
-// Top Navigation Button Toggle on Scroll
+// Top Navigation Button Toggle on Scroll - DISABLED
 function initTopNavToggle() {
-    const shareButton = document.getElementById('top-share-button');
+    // Scroll effect disabled - only show download button
     const downloadButton = document.getElementById('top-download-button');
-
-    if (!shareButton || !downloadButton) return;
-
-    let ticking = false;
-
-    function updateTopNav() {
-        const scrollY = window.scrollY;
-
-        // Show download button when scrolled down more than 200px
-        if (scrollY > 200) {
-            shareButton.classList.remove('top-nav__button_visible');
-            downloadButton.classList.add('top-nav__button_visible');
-        } else {
-            shareButton.classList.add('top-nav__button_visible');
-            downloadButton.classList.remove('top-nav__button_visible');
-        }
-
-        ticking = false;
+    
+    if (downloadButton) {
+        downloadButton.classList.add('top-nav__button_visible');
     }
-
-    function requestTick() {
-        if (!ticking) {
-            requestAnimationFrame(updateTopNav);
-            ticking = true;
-        }
-    }
-
-    window.addEventListener('scroll', requestTick);
 }
 
-// Share Button Functionality
+// Share Button Functionality - DISABLED
 function initShareButton() {
-    const shareButton = document.getElementById('top-share-button');
-
-    if (!shareButton) return;
-
-    shareButton.addEventListener('click', function(e) {
-        e.preventDefault();
-
-        // Get current page URL and title
-        const url = window.location.href;
-        const title = document.title;
-
-        // Check if Web Share API is supported
-        if (navigator.share) {
-            navigator.share({
-                title: title,
-                url: url
-            }).catch(err => {
-                console.log('Error sharing:', err);
-                fallbackShare(url, title);
-            });
-        } else {
-            // Fallback for browsers that don't support Web Share API
-            fallbackShare(url, title);
-        }
-    });
+    // Share button functionality disabled
+    return;
 }
 
 // Fallback share function
