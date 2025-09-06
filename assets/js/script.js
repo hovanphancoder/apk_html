@@ -911,15 +911,7 @@ function initializeHeroSlider() {
     }
 }
 
-// Top Navigation Button Toggle on Scroll - DISABLED
-function initTopNavToggle() {
-    // Scroll effect disabled - only show download button
-    const downloadButton = document.getElementById('top-download-button');
-
-    if (downloadButton) {
-        downloadButton.classList.add('top-nav__button_visible');
-    }
-}
+// Top Navigation Button Toggle on Scroll - REMOVED
 
 // Share Button Functionality - DISABLED
 function initShareButton() {
@@ -991,8 +983,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof filterApps === 'function') filterApps('featured');
     if (typeof filterDownloads === 'function') filterDownloads('week');
 
-    // Initialize top nav toggle
-    initTopNavToggle();
+    // Top nav toggle removed - no scroll effects needed
 
     // Initialize share button
     initShareButton();
