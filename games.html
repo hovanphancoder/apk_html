@@ -286,7 +286,7 @@
         <nav class="container">
             <div style="display: grid; grid-template-rows: 64px; grid-template-columns: calc(100% - 10px - 64px) 64px; gap: 10px;">
                 <div class="menu-container liquid-glass" style="padding-left: 20px; padding-right: 20px;">
-                    <a href="index.html" class="clickable" aria-label="Home page">
+                    <a href="index.html" class="clickable">
                         <div class="menu-item" style="text-align: start;">
                             <span class="svg-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 56 56">
@@ -874,7 +874,7 @@
             // Remove any loading indicators if needed
             const loadingElements = document.querySelectorAll('.loading');
             loadingElements.forEach(el => el.classList.remove('loading'));
-            
+
             // Go Back functionality
             const goBackBtn = document.getElementById('go-back');
             if (goBackBtn) {
