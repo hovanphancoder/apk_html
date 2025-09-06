@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APKMody - Download Mod APK Games & Apps for Android</title>
+    <title>APKMody - full optimize</title>
     <meta name="description" content="Download the latest mod APK games and apps for Android. Get premium features for free with our safe and tested modded applications.">
     <meta name="keywords" content="mod apk, android games, modded apps, premium apps, free download">
     <!-- Critical CSS inline for faster rendering -->
@@ -197,6 +197,35 @@
             display: none !important
         }
 
+        /* Loading skeleton to prevent FOUC */
+        .loading-skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% {
+                background-position: 200% 0;
+            }
+
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        .skeleton-text {
+            height: 1em;
+            margin: 0.5em 0;
+            border-radius: 4px;
+        }
+
+        .skeleton-app {
+            height: 75px;
+            border-radius: 15px;
+            margin: 15px 0;
+        }
+
         @media only screen and (max-width:600px) {
             .flex-home .flex-item {
                 flex: 0 1 48%
@@ -232,16 +261,6 @@
     <!-- Preload critical JS -->
     <link rel="preload" href="assets/js/script.min.js" as="script">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <link rel="preload" href="assets/js/script.min.js" as="script">
 </head>
 
 <body>
@@ -310,7 +329,7 @@
                             </span>
                             <span>Menu</span>
                         </div>
-                    </a>
+                        </a>
                 </div>
                 <div class="menu-container liquid-glass">
                     <button class="clickable" id="search-open" type="button" aria-label="Search" style="width: 100%; height: 100%;">
@@ -321,7 +340,7 @@
                                 </svg>
                             </span>
                         </div>
-                    </a>
+                        </a>
                 </div>
             </div>
         </nav>
