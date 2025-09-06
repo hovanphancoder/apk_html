@@ -913,25 +913,9 @@ function initializeHeroSlider() {
 
 // Top Navigation Button Toggle on Scroll - REMOVED
 
-// Share Button Functionality - DISABLED
-function initShareButton() {
-    // Share button functionality disabled
-    return;
-}
+// Share Button Functionality - REMOVED
 
-// Fallback share function
-function fallbackShare(url, title) {
-    // Create a temporary input element
-    const input = document.createElement('input');
-    input.value = url;
-    document.body.appendChild(input);
-    input.select();
-    document.execCommand('copy');
-    document.body.removeChild(input);
-
-    // Show a simple alert (you can replace this with a better notification)
-    alert('Link copied to clipboard!');
-}
+// Fallback share function - REMOVED
 
 // Unfold Table Functionality
 function initUnfoldTable() {
@@ -985,8 +969,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Top nav toggle removed - no scroll effects needed
 
-    // Initialize share button
-    initShareButton();
+    // Share button removed - no longer needed
 
     // Initialize unfold table
     initUnfoldTable();
