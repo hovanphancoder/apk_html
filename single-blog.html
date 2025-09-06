@@ -7,195 +7,195 @@
     <title>APKMody - full optimize</title>
     <meta name="description" content="Download the latest mod APK games and apps for Android. Get premium features for free with our safe and tested modded applications.">
     <meta name="keywords" content="mod apk, android games, modded apps, premium apps, free download">
-    <!-- Critical CSS inline for faster rendering -->
+        <!-- Critical CSS inline for faster rendering -->
     <style>
-        /* Critical CSS - Above the fold styles */
-        *,
-        :after,
-        :before {
-            -webkit-tap-highlight-color: transparent;
-            -webkit-box-sizing: inherit;
-            box-sizing: inherit
-        }
+/* Critical CSS - Above the fold styles */
+*,
+:after,
+:before {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit
+}
 
-        html {
-            line-height: 1.8;
-            -webkit-text-size-adjust: 100%;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-            color: #212121;
-            background: #fff;
-            font-style: inherit;
-            text-rendering: auto;
-            overflow-x: hidden;
-            font-size: 16px;
-            font-weight: 350;
-            scroll-behavior: smooth
-        }
+html {
+    line-height: 1.8;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    color: #212121;
+    background: #fff;
+    font-style: inherit;
+    text-rendering: auto;
+    overflow-x: hidden;
+    font-size: 16px;
+    font-weight: 350;
+    scroll-behavior: smooth
+}
 
-        body {
-            margin: 0 !important;
-            overflow-x: hidden
-        }
+body {
+    margin: 0 !important;
+    overflow-x: hidden
+}
 
-        .container {
-            margin-right: auto;
-            margin-left: auto;
-            padding-right: 4vw;
-            padding-left: 4vw;
-            max-width: calc(970px + 8vw);
-            width: 100%
-        }
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 4vw;
+    padding-left: 4vw;
+    max-width: calc(970px + 8vw);
+    width: 100%
+}
 
-        #header {
-            width: 100%;
-            display: inline-block;
-            position: fixed;
-            bottom: 15px;
-            left: 0;
-            z-index: 2;
-            -webkit-filter: none
-        }
+#header {
+    width: 100%;
+    display: inline-block;
+    position: fixed;
+    bottom: 15px;
+    left: 0;
+    z-index: 2;
+    -webkit-filter: none
+}
 
-        .menu-container {
-            overflow: hidden;
-            position: relative;
-            display: flex;
-            justify-content: space-between;
-            height: 64px;
-            border-radius: 50px
-        }
+.menu-container {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 64px;
+    border-radius: 50px
+}
 
-        .menu-item {
-            line-height: 1;
-            opacity: .6;
-            cursor: pointer;
-            display: flex;
-            height: 100%;
-            justify-content: center;
-            align-items: center;
-            flex-direction: row;
-            font-size: 13px
-        }
+.menu-item {
+    line-height: 1;
+    opacity: .6;
+    cursor: pointer;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    font-size: 13px
+}
 
-        .menu-item .svg-icon {
-            margin-right: 3px
-        }
+.menu-item .svg-icon {
+    margin-right: 3px
+}
 
-        .menu-item__active {
-            opacity: .8;
-            color: #1a73e8
-        }
+.menu-item__active {
+    opacity: .8;
+    color: #1a73e8
+}
 
-        .menu-item__active .svg-icon svg {
-            fill: #1a73e8
-        }
+.menu-item__active .svg-icon svg {
+    fill: #1a73e8
+}
 
-        .liquid-glass {
-            border: 1px solid rgba(255, 255, 255, .2);
-            background-color: rgba(255, 255, 255, .2);
-            backdrop-filter: blur(20px) saturate(120%);
-            -webkit-backdrop-filter: blur(20px) saturate(120%);
-            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .2)
-        }
+.liquid-glass {
+    border: 1px solid rgba(255, 255, 255, .2);
+    background-color: rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px) saturate(120%);
+    -webkit-backdrop-filter: blur(20px) saturate(120%);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .2)
+}
 
-        .cover {
-            aspect-ratio: 2/1;
-            position: relative
-        }
+.cover {
+    aspect-ratio: 2/1;
+    position: relative
+}
 
-        .cover img {
-            aspect-ratio: 2/1;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 8px
-        }
+.cover img {
+    aspect-ratio: 2/1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px
+}
 
-        .flex-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between
-        }
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between
+}
 
-        .flex-container .flex-item {
-            flex: 0 1 100%;
-            overflow: hidden
-        }
+.flex-container .flex-item {
+    flex: 0 1 100%;
+    overflow: hidden
+}
 
-        .flex-home .flex-item {
-            flex: 0 1 23%
-        }
+.flex-home .flex-item {
+    flex: 0 1 23%
+}
 
-        .app {
-            position: relative;
-            margin-top: 15px;
-            margin-bottom: 15px;
-            color: inherit;
-            display: grid;
-            grid-template-rows: 75px;
-            grid-template-columns: 70px calc(100% - 75px - 15px);
-            gap: 15px;
-            width: 100%
-        }
+.app {
+    position: relative;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: inherit;
+    display: grid;
+    grid-template-rows: 75px;
+    grid-template-columns: 70px calc(100% - 75px - 15px);
+    gap: 15px;
+    width: 100%
+}
 
-        .app-icon {
-            width: 75px;
-            height: 75px;
-            position: relative;
-            border-radius: 15px;
-            aspect-ratio: 1/1;
-            overflow: hidden
-        }
+.app-icon {
+    width: 75px;
+    height: 75px;
+    position: relative;
+    border-radius: 15px;
+    aspect-ratio: 1/1;
+    overflow: hidden
+}
 
-        .app-icon img {
-            border-radius: 15px;
-            aspect-ratio: 1/1
-        }
+.app-icon img {
+    border-radius: 15px;
+    aspect-ratio: 1/1
+}
 
-        .app-name {
-            width: 100%;
-            position: relative;
-            align-self: center
-        }
+.app-name {
+    width: 100%;
+    position: relative;
+    align-self: center
+}
 
-        .app-name h1 {
-            line-height: 25px;
-            font-weight: 400
-        }
+.app-name h1 {
+    line-height: 25px;
+    font-weight: 400
+}
 
-        .clickable {
-            opacity: 1;
-            transition: 250ms ease-in-out;
-            position: relative;
-            overflow: hidden;
-            transform: translate3d(0, 0, 0)
-        }
+.clickable {
+    opacity: 1;
+    transition: 250ms ease-in-out;
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0)
+}
 
-        .clickable:hover {
-            opacity: .75;
-            transition: 250ms ease-in-out
-        }
+.clickable:hover {
+    opacity: .75;
+    transition: 250ms ease-in-out
+}
 
-        img {
-            height: auto;
-            -ms-interpolation-mode: bicubic;
-            vertical-align: middle;
-            max-width: 100%
-        }
+img {
+    height: auto;
+    -ms-interpolation-mode: bicubic;
+    vertical-align: middle;
+    max-width: 100%
+}
 
-        a {
-            color: #1a73e8;
-            text-decoration: none;
-            transition: .3s
-        }
+a {
+    color: #1a73e8;
+    text-decoration: none;
+    transition: .3s
+}
 
-        .hide {
-            display: none !important
-        }
+.hide {
+    display: none !important
+}
 
         /* Loading skeleton to prevent FOUC */
         .loading-skeleton {
@@ -226,38 +226,38 @@
             margin: 15px 0;
         }
 
-        @media only screen and (max-width:600px) {
-            .flex-home .flex-item {
-                flex: 0 1 48%
-            }
-        }
+@media only screen and (max-width:600px) {
+    .flex-home .flex-item {
+        flex: 0 1 48%
+    }
+}
 
-        @media only screen and (max-width:600px) {
-            .menu-item {
-                flex-direction: column
-            }
+@media only screen and (max-width:600px) {
+    .menu-item {
+        flex-direction: column
+    }
 
-            .menu-item .svg-icon {
-                margin-right: 0
-            }
-        }
+    .menu-item .svg-icon {
+        margin-right: 0
+    }
+}
     </style>
-
-    <!-- Load CSS synchronously to prevent FOUC -->
+    
+        <!-- Load CSS synchronously to prevent FOUC -->
     <link rel="stylesheet" href="assets/css/styles.min.css">
     <link rel="stylesheet" href="assets/css/custome.min.css">
-
+    
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-
-    <!-- Load fonts with display=swap for better performance -->
+    
+        <!-- Load fonts with display=swap for better performance -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
-
-    <!-- Load Font Awesome -->
+    
+        <!-- Load Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    
     <!-- Preload critical JS -->
     <link rel="preload" href="assets/js/script.min.js" as="script">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
@@ -329,7 +329,7 @@
                             </span>
                             <span>Menu</span>
                         </div>
-                        </a>
+                    </a>
                 </div>
                 <div class="menu-container liquid-glass">
                     <button class="clickable" id="search-open" type="button" aria-label="Search" style="width: 100%; height: 100%;">
@@ -340,7 +340,7 @@
                                 </svg>
                             </span>
                         </div>
-                        </a>
+                    </a>
                 </div>
             </div>
         </nav>
@@ -497,7 +497,7 @@
                             <div class="flex-item">
                                 <article class="card has-shadow clickable"><a href="/blog/teach-music-composition-with-text-to-speech-ai-in-capcut" aria-label="Teach Music Composition with Text to Speech AI in CapCut PC"></a>
                                     <div class="card-image"><a href="/blog/teach-music-composition-with-text-to-speech-ai-in-capcut" aria-label="CapCut MOD APK cover APKMODY COM ">
-
+                                
                                             <img width="540" height="360" src="images/editors/blog-esports-titles-540x360.webp" alt="CapCut MOD APK cover APKMODY COM " decoding="async" loading="lazy" class="loaded">
                                             <div class="card-body">
                                                 <div class="card-title">
@@ -513,7 +513,7 @@
                             <div class="flex-item">
                                 <article class="card has-shadow clickable"><a href="/blog/1win-the-new-face-of-patience-thinking-digital-entertainment" aria-label="1win: The New Face of Patience, Thinking &amp; Digital Entertainment"></a>
                                     <div class="card-image"><a href="/blog/1win-the-new-face-of-patience-thinking-digital-entertainment" aria-label="1win logo 673x360">
-
+                                
                                             <img width="540" height="360" src="images/editors/blog-esports-titles-540x360.webp" alt="1win logo 673x360" decoding="async" loading="lazy" class="loaded">
                                             <div class="card-body">
                                                 <div class="card-title">
@@ -528,7 +528,7 @@
                             <div class="flex-item">
                                 <article class="card has-shadow clickable"><a href="/blog/teach-music-composition-with-text-to-speech-ai-in-capcut" aria-label="Teach Music Composition with Text to Speech AI in CapCut PC"></a>
                                     <div class="card-image"><a href="/blog/teach-music-composition-with-text-to-speech-ai-in-capcut" aria-label="CapCut MOD APK cover APKMODY COM ">
-
+                                
                                             <img width="540" height="360" src="images/editors/blog-esports-titles-540x360.webp" alt="CapCut MOD APK cover APKMODY COM " decoding="async" loading="lazy" class="loaded">
                                             <div class="card-body">
                                                 <div class="card-title">
@@ -544,7 +544,7 @@
                             <div class="flex-item">
                                 <article class="card has-shadow clickable"><a href="/blog/1win-the-new-face-of-patience-thinking-digital-entertainment" aria-label="1win: The New Face of Patience, Thinking &amp; Digital Entertainment"></a>
                                     <div class="card-image"><a href="/blog/1win-the-new-face-of-patience-thinking-digital-entertainment" aria-label="1win logo 673x360">
-
+                                
                                             <img width="540" height="360" src="images/editors/blog-esports-titles-540x360.webp" alt="1win logo 673x360" decoding="async" loading="lazy" class="loaded">
                                             <div class="card-body">
                                                 <div class="card-title">
@@ -823,18 +823,6 @@
             const loadingElements = document.querySelectorAll('.loading');
             loadingElements.forEach(el => el.classList.remove('loading'));
 
-            // Go Back functionality
-            const goBackBtn = document.getElementById('go-back');
-            if (goBackBtn) {
-                goBackBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    if (window.history.length > 1) {
-                        window.history.back();
-                    } else {
-                        window.location.href = 'index.html';
-                    }
-                });
-            }
         });
     </script>
 </body>
