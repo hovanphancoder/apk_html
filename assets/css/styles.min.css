@@ -2830,8 +2830,25 @@ footer p {
     margin-top: 50px
 }
 
-[type=button],[type=submit],button {
+[type=button],
+[type=submit],
+button {
     border: none;
     -webkit-appearance: button;
     background: transparent
+}
+
+.card .card-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-width: 182px;
+    max-height: 91px
+}
+
+@media (max-width: 768px) {
+    .card .card-image img {
+        max-width: 150px;
+        max-height: 75px
+    }
 }

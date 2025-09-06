@@ -2989,8 +2989,27 @@ footer p {
 }
 
 /* Button reset styles */
-[type=button], [type=submit], button {
+[type=button],
+[type=submit],
+button {
     border: none;
     -webkit-appearance: button;
     background: transparent;
+}
+
+/* Image optimization for better performance */
+.card .card-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-width: 182px;
+    max-height: 91px;
+}
+
+/* Responsive images for mobile */
+@media (max-width: 768px) {
+    .card .card-image img {
+        max-width: 150px;
+        max-height: 75px;
+    }
 }
