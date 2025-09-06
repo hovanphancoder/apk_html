@@ -1098,7 +1098,7 @@ tr:last-of-type {
 }
 
 .card .card-image img {
-    aspect-ratio: 2 / 1;
+    aspect-ratio: 3 / 2;
     width: 100%;
     height: 100%;
     border-radius: 10px;
@@ -1557,11 +1557,11 @@ details:not([open])>*:not(summary) {
 @media only screen and (max-width: 992px) {
 
     .entry-cover {
-        aspect-ratio: 2 / 1;
+        aspect-ratio: 3 / 2;
     }
 
     .entry-cover img {
-        aspect-ratio: 2 / 1;
+        aspect-ratio: 3 / 2;
     }
 
 }
