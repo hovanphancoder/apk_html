@@ -974,8 +974,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize unfold table
     initUnfoldTable();
 
-    // Initialize table of contents
-    initTableOfContents();
+    // Initialize table of contents with delay
+    setTimeout(() => {
+        initTableOfContents();
+        // Test TOC generation immediately
+        generateTableOfContents();
+    }, 100);
 });
 
 // Table of Contents Functionality
@@ -1004,15 +1008,32 @@ function initTableOfContents() {
 
 // Generate table of contents from headings
 function generateTableOfContents() {
-    const tableOfContent = document.getElementById('table-of-content');
-    if (!tableOfContent) return;
+    console.log('Starting TOC generation...');
 
-    // Try multiple selectors to find content
-    const content = document.querySelector('.entry-content, .main-entry-content, .entry-block');
+    const tableOfContent = document.getElementById('table-of-content');
+    if (!tableOfContent) {
+        console.log('TOC container not found');
+        return;
+    }
+
+    // Try multiple selectors to find content - prioritize main content area
+    let content = document.querySelector('.entry-block.entry-content.main-entry-content');
+    if (!content) {
+        content = document.querySelector('.entry-content');
+    }
+    if (!content) {
+        content = document.querySelector('.main-entry-content');
+    }
+    if (!content) {
+        content = document.querySelector('.entry-block');
+    }
+
     if (!content) {
         console.log('Content container not found');
         return;
     }
+
+    console.log('Found content container:', content.className);
 
     const headings = content.querySelectorAll('h1, h2, h3, h4, h5, h6');
     console.log('Found headings:', headings.length);
@@ -1031,9 +1052,11 @@ function generateTableOfContents() {
     // Clear existing content
     tocList.innerHTML = '';
 
+    let addedCount = 0;
     headings.forEach((heading, index) => {
         // Skip headings in recommended section
-        if (heading.closest('.recommended-section, .recommended-for-you')) {
+        if (heading.closest('.recommended-section, .recommended-for-you, .related-posts')) {
+            console.log('Skipping heading in recommended section:', heading.textContent);
             return;
         }
 
@@ -1066,7 +1089,10 @@ function generateTableOfContents() {
 
         li.appendChild(a);
         tocList.appendChild(li);
+        addedCount++;
+
+        console.log('Added heading:', heading.textContent.trim(), 'Level:', level);
     });
 
-    console.log('TOC generated with', tocList.children.length, 'items');
+    console.log('TOC generated with', addedCount, 'items');
 }

@@ -1477,7 +1477,10 @@ details:not([open])>:not(summary) {
 }
 
 .entry-author .font-size__small {
-    line-height: 1.3
+    line-height: 1.3;
+    display: flex;
+    flex-direction: column;
+    width: 100px
 }
 
 .entry-cover {
