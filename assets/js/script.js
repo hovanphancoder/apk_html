@@ -1007,19 +1007,36 @@ function generateTableOfContents() {
     const tableOfContent = document.getElementById('table-of-content');
     if (!tableOfContent) return;
 
-    const content = document.querySelector('.entry-content, .main-entry-content');
-    if (!content) return;
+    // Try multiple selectors to find content
+    const content = document.querySelector('.entry-content, .main-entry-content, .entry-block');
+    if (!content) {
+        console.log('Content container not found');
+        return;
+    }
 
     const headings = content.querySelectorAll('h1, h2, h3, h4, h5, h6');
-    if (headings.length === 0) return;
+    console.log('Found headings:', headings.length);
+    
+    if (headings.length === 0) {
+        console.log('No headings found in content');
+        return;
+    }
 
     const tocList = tableOfContent.querySelector('ul');
-    if (!tocList) return;
+    if (!tocList) {
+        console.log('TOC list not found');
+        return;
+    }
 
     // Clear existing content
     tocList.innerHTML = '';
 
     headings.forEach((heading, index) => {
+        // Skip headings in recommended section
+        if (heading.closest('.recommended-section, .recommended-for-you')) {
+            return;
+        }
+
         // Create ID if not exists
         if (!heading.id) {
             heading.id = `heading-${index}`;
@@ -1028,20 +1045,20 @@ function generateTableOfContents() {
         // Create list item
         const li = document.createElement('li');
         const level = parseInt(heading.tagName.charAt(1));
-
+        
         // Add indentation based on heading level
         li.style.marginLeft = `${(level - 1) * 20}px`;
-
+        
         // Create link
         const a = document.createElement('a');
         a.href = `#${heading.id}`;
         a.textContent = heading.textContent.trim();
         a.setAttribute('aria-label', `Jump to ${heading.textContent.trim()}`);
-
+        
         // Add click handler for smooth scroll
         a.addEventListener('click', function(e) {
             e.preventDefault();
-            heading.scrollIntoView({
+            heading.scrollIntoView({ 
                 behavior: 'smooth',
                 block: 'start'
             });
@@ -1050,4 +1067,6 @@ function generateTableOfContents() {
         li.appendChild(a);
         tocList.appendChild(li);
     });
+    
+    console.log('TOC generated with', tocList.children.length, 'items');
 }
