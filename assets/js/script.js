@@ -991,7 +991,7 @@ function initTableOfContents() {
     // Toggle TOC visibility
     tocTrigger.addEventListener('click', function() {
         const isOpen = tableOfContent.hasAttribute('open');
-        
+
         if (isOpen) {
             tableOfContent.removeAttribute('open');
             tocTrigger.textContent = 'Show Contents';
@@ -1028,20 +1028,20 @@ function generateTableOfContents() {
         // Create list item
         const li = document.createElement('li');
         const level = parseInt(heading.tagName.charAt(1));
-        
+
         // Add indentation based on heading level
         li.style.marginLeft = `${(level - 1) * 20}px`;
-        
+
         // Create link
         const a = document.createElement('a');
         a.href = `#${heading.id}`;
         a.textContent = heading.textContent.trim();
         a.setAttribute('aria-label', `Jump to ${heading.textContent.trim()}`);
-        
+
         // Add click handler for smooth scroll
         a.addEventListener('click', function(e) {
             e.preventDefault();
-            heading.scrollIntoView({ 
+            heading.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
             });
