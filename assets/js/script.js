@@ -1,3 +1,6 @@
+// Script loaded test
+console.log('Script.js loaded successfully!');
+
 // DOM Elements
 const menuToggle = document.getElementById('menuToggle');
 const nav = document.querySelector('.nav');
@@ -959,6 +962,7 @@ function initUnfoldTable() {
 
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM loaded, script is running!');
     // Initialize hero slider
     initializeHeroSlider();
 
@@ -976,24 +980,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize table of contents with delay
     setTimeout(() => {
+
         initTableOfContents();
-        // Test TOC generation immediately
-        generateTableOfContents();
     }, 100);
 });
 
 // Table of Contents Functionality
 function initTableOfContents() {
+
     const tocTrigger = document.getElementById('toc-trigger');
     const tableOfContent = document.getElementById('table-of-content');
 
-    if (!tocTrigger || !tableOfContent) return;
+
+
+    if (!tocTrigger || !tableOfContent) {
+
+        return;
+    }
 
     // Generate TOC from headings
+
     generateTableOfContents();
 
     // Toggle TOC visibility
     tocTrigger.addEventListener('click', function() {
+
         const isOpen = tableOfContent.hasAttribute('open');
 
         if (isOpen) {
@@ -1053,6 +1064,8 @@ function generateTableOfContents() {
     tocList.innerHTML = '';
 
     let addedCount = 0;
+    let headingNumbers = [0, 0, 0, 0, 0, 0]; // Track numbers for each level
+
     headings.forEach((heading, index) => {
         // Skip headings in recommended section
         if (heading.closest('.recommended-section, .recommended-for-you, .related-posts')) {
@@ -1069,21 +1082,40 @@ function generateTableOfContents() {
         const li = document.createElement('li');
         const level = parseInt(heading.tagName.charAt(1));
 
+        // Increment number for current level and reset deeper levels
+        headingNumbers[level - 1]++;
+        for (let i = level; i < 6; i++) {
+            headingNumbers[i] = 0;
+        }
+
+        // Generate number string (e.g., "1.2.3")
+        let numberString = '';
+        for (let i = 0; i < level; i++) {
+            if (headingNumbers[i] > 0) {
+                if (numberString) numberString += '.';
+                numberString += headingNumbers[i];
+            }
+        }
+
         // Add indentation based on heading level
         li.style.marginLeft = `${(level - 1) * 20}px`;
 
-        // Create link
+        // Create link with number
         const a = document.createElement('a');
         a.href = `#${heading.id}`;
-        a.textContent = heading.textContent.trim();
+        a.innerHTML = `<span class="toc-number">${numberString}.</span> ${heading.textContent.trim()}`;
         a.setAttribute('aria-label', `Jump to ${heading.textContent.trim()}`);
 
-        // Add click handler for smooth scroll
+        // Add click handler for smooth scroll with header offset
         a.addEventListener('click', function(e) {
             e.preventDefault();
-            heading.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+            const headerHeight = 50;
+            const elementPosition = heading.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
             });
         });
 
@@ -1091,7 +1123,7 @@ function generateTableOfContents() {
         tocList.appendChild(li);
         addedCount++;
 
-        console.log('Added heading:', heading.textContent.trim(), 'Level:', level);
+        console.log('Added heading:', heading.textContent.trim(), 'Level:', level, 'Number:', numberString);
     });
 
     console.log('TOC generated with', addedCount, 'items');
