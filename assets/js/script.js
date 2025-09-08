@@ -973,4 +973,81 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize unfold table
     initUnfoldTable();
+
+    // Initialize table of contents
+    initTableOfContents();
 });
+
+// Table of Contents Functionality
+function initTableOfContents() {
+    const tocTrigger = document.getElementById('toc-trigger');
+    const tableOfContent = document.getElementById('table-of-content');
+
+    if (!tocTrigger || !tableOfContent) return;
+
+    // Generate TOC from headings
+    generateTableOfContents();
+
+    // Toggle TOC visibility
+    tocTrigger.addEventListener('click', function() {
+        const isOpen = tableOfContent.hasAttribute('open');
+        
+        if (isOpen) {
+            tableOfContent.removeAttribute('open');
+            tocTrigger.textContent = 'Show Contents';
+        } else {
+            tableOfContent.setAttribute('open', '');
+            tocTrigger.textContent = 'Hide Contents';
+        }
+    });
+}
+
+// Generate table of contents from headings
+function generateTableOfContents() {
+    const tableOfContent = document.getElementById('table-of-content');
+    if (!tableOfContent) return;
+
+    const content = document.querySelector('.entry-content, .main-entry-content');
+    if (!content) return;
+
+    const headings = content.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    if (headings.length === 0) return;
+
+    const tocList = tableOfContent.querySelector('ul');
+    if (!tocList) return;
+
+    // Clear existing content
+    tocList.innerHTML = '';
+
+    headings.forEach((heading, index) => {
+        // Create ID if not exists
+        if (!heading.id) {
+            heading.id = `heading-${index}`;
+        }
+
+        // Create list item
+        const li = document.createElement('li');
+        const level = parseInt(heading.tagName.charAt(1));
+        
+        // Add indentation based on heading level
+        li.style.marginLeft = `${(level - 1) * 20}px`;
+        
+        // Create link
+        const a = document.createElement('a');
+        a.href = `#${heading.id}`;
+        a.textContent = heading.textContent.trim();
+        a.setAttribute('aria-label', `Jump to ${heading.textContent.trim()}`);
+        
+        // Add click handler for smooth scroll
+        a.addEventListener('click', function(e) {
+            e.preventDefault();
+            heading.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+
+        li.appendChild(a);
+        tocList.appendChild(li);
+    });
+}
